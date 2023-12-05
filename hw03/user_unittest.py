@@ -8,7 +8,7 @@ class LogoutTest(unittest.TestCase):
     def setUp(self):
         self.test_repo = UserRepository()
         user_list = ([User(f'user{i}', 'password', is_admin=True) for i in range(randint(1, 5))] +
-                     [User(f'user{i}', 'password') for i in range(randint(6, 15))])
+                     [User(f'user{i}', 'password') for i in range(6, randint(6, 15))])
         shuffle(user_list)
         for user in user_list:
             user.login()
